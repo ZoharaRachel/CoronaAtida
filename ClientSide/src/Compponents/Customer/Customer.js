@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getAllCustomers } from "../../action/customer";
+import { getAllCustomers,getCustomerDetails } from "../../action/customer";
 import "./Customers.css";
 const Customer = (props) => {
   let navigate = useNavigate();
@@ -22,6 +22,7 @@ const Customer = (props) => {
                   value="show details"
                   type="button"
                   onClick={() => {
+                    // props.getCustomerDetails(c.Id);
                     navigate("/CustomerDetails/" + c.Id);
                   }}
                 />
@@ -46,4 +47,4 @@ const mapStateToProps = (state) => {
     customers: state.customers,
   };
 };
-export default connect(mapStateToProps, { getAllCustomers })(Customer);
+export default connect(mapStateToProps, { getAllCustomers,getCustomerDetails })(Customer);

@@ -18,8 +18,8 @@ export const getCustomerDetails = (Id) => {
   return (dispatch) => {
     axios.get("http://localhost:8080/getCustomerDetails/" + Id).then(
       (response) => {
-        console.log(response.data);
-        dispatch(saveCustomerDetails(response.data));
+        console.log(response.data[0]);
+        dispatch(saveCustomerDetails(response.data[0]));
       },
       (err) => {
         console.log(err);
