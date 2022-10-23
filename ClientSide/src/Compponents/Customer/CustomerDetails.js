@@ -7,6 +7,7 @@ import "./Customers.css";
 const CustomerDetails = (props) => {
   let { id } = useParams();
   let item = { ...props.customers.find((x) => x.Id == id) };
+  console.log(item)
   let navigate = useNavigate();
   // useEffect(() => {
   //   getCustomerDetails(id);

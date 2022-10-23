@@ -174,8 +174,9 @@ const UpdateCustomer = (props) => {
         onClick={() => {
           // e.preventDefault();
           props.updateCustomer(item);
-          navigate("/Customer");
+          console.log(item)
           alert("פרטי הלקוח עודכנו בהצלחה ");
+          navigate("/Customer");          
         }}
       />
     </form>

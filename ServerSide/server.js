@@ -31,7 +31,8 @@ MySQLConnection.connect((err) => {
 });
 
 app.get("/customers", async (req, res) => {
-  const queryString = `SELECT * FROM customer`;
+  const queryString = `SELECT customer.*, coronadetails.* FROM customer
+                      JOIN coronadetails ON customer.Id=coronadetails.customerId`;
   try {
     const result = await promiseQuery(queryString);
     //console.log(result);
@@ -43,6 +44,19 @@ app.get("/customers", async (req, res) => {
 
 app.get("/getCustomerDetails/:id", async (req, res) => {
   const id = req.params.id;
+  const queryString = `SELECT customer.*, coronadetails.* FROM customer
+                      JOIN coronadetails ON customer.Id=coronadetails.customerId`;
+  try {
+    const result = await promiseQuery(queryString);
+    //console.log(result);
+    res.send(result);
+  } catch (e) {
+    res.status(500).send(e.sqlMessage);
+  }
+});
+
+app.get("/getCustomerCoronaDetails/:id", async (req, res) => {
+  const id = req.params.id;
   const queryString = `SELECT * FROM coronadetails WHERE customerId='${id}'`;
   try {
     const result = await promiseQuery(queryString);
@@ -52,18 +66,6 @@ app.get("/getCustomerDetails/:id", async (req, res) => {
     res.status(500).send(e.sqlMessage);
   }
 });
-
-// app.get("/getCustomerCoronaDetails/:id", async (req, res) => {
-//   const id = req.params.id;
-//   const queryString = `SELECT * FROM coronadetails WHERE customerId='${id}'`;
-//   try {
-//     const result = await promiseQuery(queryString);
-//     console.log(result);
-//     res.send(result);
-//   } catch (e) {
-//     res.status(500).send(e.sqlMessage);
-//   }
-// });
 
 app.post("/addCustomer", async (req, res) => {
   const customer = req.body;
