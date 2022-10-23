@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `coronadb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `coronadb`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: coronadb
@@ -42,7 +40,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES ('022009492','רנית','אברמוביץ','רמבן 16 מעלה עמוס','2022-10-11','029932084','0527124904'),('057853236','חיים','ברקוביץ','יעקב אבינו 12 באר שבע','1964-09-27','086489670','0509620050'),('213249758','זוהרה רחל','ברקוביץ','רמב\"ן 16 מעלה עמוס','2002-10-19','029932084','0527126039'),('214578963','חנה','לוי','כלשהו','2022-10-01','023365897','0523698742');
+INSERT INTO `customer` VALUES ('022009492','רנית','אברמוביץ','רמבן 16 מעלה עמוס','2022-10-11','029932084','0527124904'),('057853236','חיים','ברקוביץ','יעקב אבינו 12 באר שבע','1964-09-27','086489670','0509620050'),('214578963','חנה','לוי','כלשהו','2022-10-01','023365897','0523698742');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-22 19:11:28
+-- Dump completed on 2022-10-23 18:43:57

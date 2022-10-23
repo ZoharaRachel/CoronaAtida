@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `coronadb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `coronadb`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: coronadb
@@ -39,8 +37,8 @@ CREATE TABLE `coronadetails` (
   `RecoveryDate` date DEFAULT NULL,
   PRIMARY KEY (`id`,`customerId`),
   KEY `customer_id_idx` (`customerId`),
-  CONSTRAINT `customer_id` FOREIGN KEY (`customerId`) REFERENCES `customer` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `customer_id` FOREIGN KEY (`customerId`) REFERENCES `customer` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,6 +47,7 @@ CREATE TABLE `coronadetails` (
 
 LOCK TABLES `coronadetails` WRITE;
 /*!40000 ALTER TABLE `coronadetails` DISABLE KEYS */;
+INSERT INTO `coronadetails` VALUES (2,'022009492','2021-01-03','moderna','2021-05-12','fizzer',NULL,NULL,NULL,NULL,'2021-10-15','2022-10-30'),(3,'057853236','2021-01-21','fizzer',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `coronadetails` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-22 19:11:31
+-- Dump completed on 2022-10-23 18:43:57
