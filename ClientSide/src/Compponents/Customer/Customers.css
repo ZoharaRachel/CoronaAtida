@@ -1,0 +1,18 @@
+.container{   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: normal;
+    position: relative;
+    top: 5rem;
+    margin-right: 102px;
+
+}
+.form-control{
+    width: 250px;
+}
+h1{
+    text-align: center;
+}
+th{
+    text-align: right;
+}
